@@ -8,10 +8,19 @@ export default defineConfig({
     chunkSizeWarningLimit: 700,
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ['react', 'react-dom', 'react-router-dom'],
-          charts: ['chart.js', 'react-chartjs-2'],
-          bootstrap: ['bootstrap', 'react-bootstrap', 'bootstrap-icons'],
+        manualChunks(id) {
+          // Agrupa as bibliotecas do React
+          if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+            return 'react';
+          }
+          // Agrupa os gráficos
+          if (id.includes('chart.js') || id.includes('react-chartjs-2')) {
+            return 'charts';
+          }
+          // Agrupa o Bootstrap
+          if (id.includes('bootstrap') || id.includes('react-bootstrap') || id.includes('bootstrap-icons')) {
+            return 'bootstrap';
+          }
         },
       },
     },
