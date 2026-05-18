@@ -1,0 +1,160 @@
+/* Paleta: branco, azuis e cinzas — Nova Era + shell GestalT */
+
+.login-page {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5.5rem 1.25rem 2rem;
+  box-sizing: border-box;
+  /* Fallback quando wallpaper ainda não existe ou falha ao carregar */
+  background: linear-gradient(165deg, #e8f2fb 0%, #f7fbff 38%, #d0e4f5 100%);
+}
+
+.login-page__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('/wallpaperlogin.png') center / cover no-repeat;
+  pointer-events: none;
+}
+
+.login-page__bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(232, 242, 251, 0.75) 45%,
+    rgba(13, 58, 107, 0.18) 100%
+  );
+  pointer-events: none;
+}
+
+.login-page__gestalt {
+  position: fixed;
+  top: 1rem;
+  right: 1.25rem;
+  z-index: 10;
+  display: block;
+  height: 72px;
+  width: auto;
+  max-width: min(220px, 46vw);
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(13, 58, 107, 0.12));
+}
+
+@media (max-width: 480px) {
+  .login-page__gestalt {
+    height: 56px;
+    max-width: min(200px, 50vw);
+    top: 0.65rem;
+    right: 0.75rem;
+  }
+}
+
+.login-page__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.login-page__school-logo {
+  width: min(200px, 72vw);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(13, 58, 107, 0.08));
+}
+
+/* Vidro fosco: deixa ver o wallpaper sem perder legibilidade */
+.login-page__card.card {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 2255, 0.55);
+  border-radius: 14px;
+  box-shadow:
+    0 4px 6px -1px rgba(13, 58, 107, 0.07),
+    0 14px 32px -10px rgba(13, 58, 107, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(16px) saturate(1.12);
+  -webkit-backdrop-filter: blur(18px) saturate(2.12);
+}
+
+.login-page__card .card-body {
+  padding: 1.75rem 1.5rem 1.5rem;
+}
+
+.login-page__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0d3a6b;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.login-page__subtitle {
+  font-size: 0.9rem;
+  color: #5c6b7a;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.login-page__card .form-label {
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.35rem;
+}
+
+.login-page__card .form-control {
+  border-color: rgba(13, 58, 107, 0.2);
+  border-radius: 10px;
+  padding: 0.55rem 0.85rem;
+}
+
+.login-page__card .form-control:focus {
+  border-color: #1e5a9e;
+  box-shadow: 0 0 0 0.2rem rgba(30, 90, 158, 0.18);
+}
+
+.login-page__password-toggle {
+  border-color: rgba(13, 58, 107, 0.2);
+  color: #374151;
+  border-radius: 0 10px 10px 0;
+}
+
+.login-page__password-toggle:hover {
+  background: rgba(30, 90, 158, 0.08);
+  border-color: rgba(13, 58, 107, 0.28);
+  color: #0d3a6b;
+}
+
+.login-page__card .input-group .form-control {
+  border-radius: 10px 0 0 10px;
+}
+
+.login-page__submit {
+  border-radius: 10px;
+  padding: 0.6rem;
+  font-weight: 600;
+  background: linear-gradient(180deg, #1e6bc4 0%, #1e5a9e 100%);
+  border: none;
+  margin-top: 0.25rem;
+}
+
+.login-page__submit:hover {
+  background: linear-gradient(180deg, #2a7ad4 0%, #1a5088 100%);
+}
+
+.login-page__submit:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgba(30, 90, 158, 0.35);
+}
